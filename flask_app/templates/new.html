@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{url_for('.static', filename='css/style.css')}}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="newsignup">
+        <img id="Imagepopup" src="{{url_for('.static', filename='images/logo.jpg')}}" class="logoimg">
+        <p class="RecipeHeader">StridingHooves</p>
+        <p class="newexericse">NEW EXERCISE</p>
+        <a class="logoutbtn" href="{{ url_for('logout') }}">Logout</a>
+    </div>
+
+    <div class="createnav">
+        <p class="createheader">Create A New Exercise:</p>
+        <a class="homelink" href="/dashboard">Back</a>
+        <a class="logoutlink" href="{{ url_for('logout') }}">Logout</a>
+    </div>
+
+    <form action="/create_post" method="post" enctype="multipart/form-data">
+        <div class="newbox">
+            <div class="form">
+                <label class="createlabel" for="pole_amount">Amount of Poles needed</label>
+                <input type="number" min="0" max="1000" name="pole_amount" id="pole_amount">
+                {% for message in get_flashed_messages(category_filter=['err_posts_pole_amount']) %}
+                        <p class="errmsg">{{message}}</p>
+                        {% endfor %}
+            </div>
+            <div class="form">
+                <label class="createlabel" for="how_to_build">How To Build It</label>
+                <div>
+                    <input class="howtobox" type="text" name="how_to_build" id="how_to_build">
+                    {% for message in get_flashed_messages(category_filter=['err_posts_how_to_build']) %}
+                        <p class="errmsg">{{message}}</p>
+                        {% endfor %}
+                </div>
+            </div>
+            <div class="form">
+                <label class="createlabel" for="how_it_works">How It Works</label>
+                <div>
+                    <input class="howtobox" type="text" name="how_it_works" id="how_it_works">
+                    {% for message in get_flashed_messages(category_filter=['err_posts_how_it_works']) %}
+                        <p class="errmsg">{{message}}</p>
+                        {% endfor %}
+                </div>
+            </div>
+    
+            <div class="form">
+                <label class="createlabel" for="image">Image of Exercise</label>
+                <div>
+                    <input class="imagenewbox" type="file" id="image" name="image">
+                    {% for message in get_flashed_messages(category_filter=['err_posts_image']) %}
+                        <p class="errmsg">{{message}}</p>
+                        {% endfor %}
+                </div>
+            </div>
+    
+            <button class="submitbtn">Submit</button>
+        </div>
+    </form>
+
+</body>
+</html>

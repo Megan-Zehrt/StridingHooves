@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{url_for('.static', filename='css/style.css')}}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <div class="newsignup">
+            <img id="Imagepopup" src="{{url_for('.static', filename='images/logo.jpg')}}" class="logoimg">
+            <p class="RecipeHeader">StridingHooves</p>
+            <p class="dashboard">DASHBOARD</p>
+            <a class="logoutbtn" href="{{ url_for('logout') }}">Logout</a>
+        </div>
+        <div class="homeheader">
+            <p class="welcome">Welcome, {{ user[0].first_name }}</p>
+            
+        </div>
+
+        <div>
+            <div class="poleworkvideo">
+                <video width="470" height="390" controls>
+                    <source src="{{url_for('.static', filename='images/polework_video.dashboard.mp4')}}" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="aboutboxdash">
+                <img id="Imagepopup" src="{{url_for('.static', filename='images/exercise.icon.jpg')}}" class="exerciseicondash">
+                <div>
+                    <p class="exerheader">EXERCISES</p>
+                    <p class="exerbody">Wanting to find a new Exercise to use? <br><br> Click the button below to view exercises <br><br> designed by us and by other equestrians</p>
+                    <a class="exercisebtn" href="{{ url_for('exercise') }}">EXERCISES</a>
+                </div>
+
+                <img id="Imagepopup" src="{{url_for('.static', filename='images/design.icon.jpg')}}" class="designicondash">
+                <div>
+                    <p class="designingheader">DESIGNS</p>
+                    <p class="designbodydash">Thinking of designing your own poles? <br><br> Click the design button below to view all <br><br> the different Designs we've selected</p>
+                    <a class="dashdesignbtn" href="{{ url_for('design') }}">DESIGNS</a>
+                </div>
+            </div>
+            
+            <div class="introimgbox">
+                <img id="Imagepopup" src="{{url_for('.static', filename='images/intro.7.jpg')}}" class="introimg">
+                <div>
+                    <p class="introheader">POLEWORK BENEFITS</p>
+                    <p class="introbody">Pole work is good for your horses because it can help them improve their fitness, flexibility, balance, rhythm, coordination, and strength. <br><br> Pole work exercises can also make your training sessions more fun and varied, and challenge your horse mentally and physically.</p>
+                    <p class="introbody">Pole work exercises can strengthen and engage your horse’s back, hindquarters, and topline, which are essential for power, speed, and agility. <br><br> This can also help your horse develop a better posture and carriage, and prevent back problems</p>
+                    <p class="introbody">Pole work exercises can develop your horse’s stride length and quality, which can improve their performance in jumping, dressage, or eventing.</p>
+                    <div class="popup" onclick="myFunction()">Click me for Different Polework Options!
+                        <span class="popuptext" id="myPopup">Groundpoles <br><br> Trot/Canter Pops <br><br> Combinations <br><br> Uprights <br><br> Oxer <br><br> Triple Bar</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="introimgbox">
+                <div>
+                    <p class="introheaderr">HORSE SAFETY</p>
+                    <p class="introbody">Horse safety Equipment help protect the horse from injury incase of <br><br> incorrect striding and to help them feel more <br><br> confident over the jumps with the extra support <br><br> on cross-country courses</p>
+                    <p class="introbody">Almost all show jumping horses wear wraps and boots because <br><br> their legs could be injured easily upon landing or tight turns. <br><br> Martingales provide the freedom needed for horses to get over the fences</p>
+
+                    <div class="popup" onclick="myFunctionHorse()">Click me for Safety Equipment Options!
+                        <span class="popuptext" id="myPopupHorse">Studs <br><br> Polo Wraps <br><br> Tendon Boots <br><br> Brushing Boots <br><br> Martingale</span>
+                    </div>
+                </div>
+                <img id="Imagepopupr" src="{{url_for('.static', filename='images/intro.9.jpg')}}" class="introimg">
+            </div>
+
+            <div class="introimgbox">
+                <img id="Imagepopup" src="{{url_for('.static', filename='images/intro.13.jpg')}}" class="introimg">
+                <div>
+                    <p class="introheader">RIDER SAFETY</p>
+                    <p class="introbody">Equestrians should wear safety gear to prevent or minimize injury when they fall off their horse. <br><br> Nothing can prevent them from falling, but with the right equipment, they can prevent or minimize injury when they do fall off. Horse riding safety equipment includes a helmet, body protector, safety vest, and more. <br><br> Wearing correct horse riding safety equipment can mitigate the risk of injury when participating in high-impact equestrian sports like an eventing competition. A severe fall can even lead to death1. <br><br> Horse riding safety vests and other safety items are not cheap, but investing in <br><br> them is worth it as they can make a huge difference to your riding safety and enjoyment.</p>
+                    <div class="popup" onclick="myFunctionRider()">Click me for Safety Gear Options!
+                        <span class="popuptext" id="myPopupRider">Helmet <br><br> Body Protector <br><br> Inflatable Vest <br><br> Safety Stirrups <br><br> Boots With Heels <br><br> Medical ID Bracelet</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottomboxdash">
+                <div class="aboutheading">
+                    <img class="aboutimg1dash" id="Imagepopup" src="{{url_for('.static', filename='images/aboutimg1.jpg')}}" class="introimg">
+                    <p class="aboutheaderdash">ABOUT</p>
+                    <img class="aboutimg2dash" id="Imagepopup" src="{{url_for('.static', filename='images/aboutimg2.jpg')}}" class="introimg">
+                </div>
+                <p class="aboutline1dash">This website is for all equestrians and horses and various different experience levels </p> 
+                <p class="aboutline2dash"> find exercises suited to your level of experience, </p> 
+                <p class="aboutline3dash"> the amount of poles you have and an in-depth description on how to build the exercise </p> 
+                <p class="aboutline4dash"> and how the exercise helps you and your horse designed by other equestrians. </p> 
+                <p class="aboutline5dash"> Create an Account to design and share and exercise for others to use!</p>
+            </div>
+
+        </div>
+    </div>
+    <script src="{{url_for('static', filename='js/script.js')}}"></script>
+</body>
+</html>

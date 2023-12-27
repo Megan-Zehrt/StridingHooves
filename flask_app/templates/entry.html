@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{url_for('.static', filename='css/style.css')}}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <div class="directionbox">
+            <div>
+                <img id="Imagepopup" src="{{url_for('.static', filename='images/logo.jpg')}}" class="logoimg">
+            </div>
+            <p class="logo">StridingHooves</p>
+            <a class="reglog" href="{{ url_for('signup') }}">Register / Login</a>
+        </div>
+
+        <div>
+            <div class="poleworkvideo">
+                <video width="470" height="390" controls>
+                    <source src="{{url_for('.static', filename='images/polework_video.mp4')}}" type="video/mp4">
+                </video>
+            </div>
+            
+
+            <div class="aboutbox">
+                <div class="aboutheading">
+                    <img class="aboutimg1" id="Imagepopup" src="{{url_for('.static', filename='images/aboutimg1.jpg')}}" class="introimg">
+                    <p class="aboutheader">ABOUT</p>
+                    <img class="aboutimg2" id="Imagepopup" src="{{url_for('.static', filename='images/aboutimg2.jpg')}}" class="introimg">
+                </div>
+                <p class="aboutline1">This website is for all equestrians and horses and various different experience levels </p> 
+                <p class="aboutline2"> find exercises suited to your level of experience, </p> 
+                <p class="aboutline3"> the amount of poles you have and an in-depth description on how to build the exercise </p> 
+                <p class="aboutline4"> and how the exercise helps you and your horse designed by other equestrians. </p> 
+                <p class="aboutline5"> Create an Account to design and share and exercise for others to use!</p>
+            </div>
+
+            
+            <div class="introimgbox">
+                <img id="Imagepopup" src="{{url_for('.static', filename='images/intro.7.jpg')}}" class="introimg">
+                <div>
+                    <p class="introheader">POLEWORK BENEFITS</p>
+                    <p class="introbody">Pole work is good for your horses because it can help them improve their fitness, flexibility, balance, rhythm, coordination, and strength. <br><br> Pole work exercises can also make your training sessions more fun and varied, and challenge your horse mentally and physically.</p>
+                    <p class="introbody">Pole work exercises can strengthen and engage your horse’s back, hindquarters, and topline, which are essential for power, speed, and agility. <br><br> This can also help your horse develop a better posture and carriage, and prevent back problems</p>
+                    <p class="introbody">Pole work exercises can develop your horse’s stride length and quality, which can improve their performance in jumping, dressage, or eventing. <br><br> This can also help you adjust your horse's stride to different distances and obstacles</p>
+                </div>
+            </div>
+            
+            <div class="introimgbox">
+                <div>
+                    <p class="introheaderr">HORSE SAFETY</p>
+                    <p class="introbody">Horse safety Equipment include a variety of leg wraps and boots to protect <br><br> their legs if they hit the poles as well as studs for shod horses <br><br> on cross-country courses</p>
+                    <p class="introbody">Almost all show jumping horses wear wraps and boots because <br><br> their legs could be injured easily upon landing or tight turns. <br><br> Martingales provide the freedom needed for horses to get over the fences</p>
+                </div>
+                <img id="Imagepopupr" src="{{url_for('.static', filename='images/intro.9.jpg')}}" class="introimg">
+            </div>
+
+            <div class="introimgbox">
+                <img id="Imagepopup" src="{{url_for('.static', filename='images/intro.13.jpg')}}" class="introimg">
+                <div>
+                    <p class="introheader">RIDER SAFETY</p>
+                    <p class="introbody">Equestrians should wear safety gear to prevent or minimize injury when they fall off their horse. <br><br> Nothing can prevent them from falling, but with the right equipment, they can prevent or minimize injury when they do fall off. Horse riding safety equipment includes a helmet, body protector, safety vest, and more. <br><br> Wearing correct horse riding safety equipment can mitigate the risk of injury when participating in high-impact equestrian sports like an eventing competition. A severe fall can even lead to death1. <br><br> Horse riding safety vests and other safety items are not cheap, but investing in <br><br> them is worth it as they can make a huge difference to your riding safety and enjoyment.</p>
+                    <p class="introbody"></p>
+                </div>
+            </div>
+
+            <div class="bottombox">
+                <img id="Imagepopup" src="{{url_for('.static', filename='images/exercise.icon.jpg')}}" class="exerciseicon">
+                <div>
+                    <p class="exerheader">EXERCISES</p>
+                    <p class="exerbody">Wanting to find a new Exercise to use? <br><br> Click the button below to view exercises <br><br> designed by us and by other equestrians</p>
+                    <a class="exercisebtn" href="{{ url_for('signup') }}">EXERCISES</a>
+                </div>
+
+                <img id="Imagepopup" src="{{url_for('.static', filename='images/design.icon.jpg')}}" class="designicon">
+                <div>
+                    <p class="designingheader">DESIGNS</p>
+                    <p class="designbody">Thinking of designing your own poles? <br><br> Click the design button below to view all <br><br> the different Designs we've selected</p>
+                    <a class="designbtn" href="{{ url_for('signup') }}">DESIGNS</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="{{url_for('static', filename='script.js')}}"></script>
+</body>
+</html>

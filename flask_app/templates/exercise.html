@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{url_for('.static', filename='css/style.css')}}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="newsignup">
+        <img id="Imagepopup" src="{{url_for('.static', filename='images/logo.jpg')}}" class="logoimg">
+        <p class="RecipeHeader">StridingHooves</p>
+        <p class="dashboardex">EXERCISE</p>
+        <a class="logoutbtn" href="{{ url_for('dashboard') }}">Back</a>
+        <a class="logoutbtn" href="{{ url_for('logout') }}">Logout</a>
+    </div>
+    <div class="homeheader">
+        <p class="welcome">Welcome, {{ user[0].first_name }}</p>
+        <a class="createbtn" href="/post/new">Create Exercise+</a>
+    </div>
+
+        {% for post in posts %}
+           <div class="posts">
+                <div class="imagebox">
+                    <img src="{{ post.image }}">
+                </div>
+
+                <div class="postbox">
+
+                    <div>
+                        <p class="postheader">How It Works</p>
+                        <p class="postinfo">{{ post.how_it_works }}</p>
+                    </div>
+
+                    <div>
+                        <p class="postheader">Pole Amount</p>
+                        <p class="postinfo">{{ post.pole_amount }}</p>
+                    </div>
+
+                    <div>
+                        <p class="postheader">Posted by</p>
+                        <p class="postname">{{ post.u.first_name}}</p>
+                    </div>
+                    
+                    {% if session['user_id'] == post.u.id %}
+                        <a class="deletelink" href="/post/delete/{{ post.id }}">Delete</a>
+                    {% endif %}
+                </div>
+           </div>
+        {% endfor %}
+
+        <script src="{{url_for('static', filename='script.js')}}"></script>
+</body>
+</html>
